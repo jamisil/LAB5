@@ -1,0 +1,43 @@
+package sistema;
+
+import java.util.Objects;
+
+public class Documento {
+	private String titulo;
+	private int tamanho;
+	
+	public Documento(String titulo) {
+		this.titulo = titulo;
+		if (titulo == null || titulo.isBlank()) {
+			throw new IllegalArgumentException();
+		}
+		
+	}
+	
+	public Documento(String titulo, int tamanhomaximo) {
+		if (titulo == null || titulo.isBlank()) {
+			throw new  IllegalArgumentException();
+		}
+		this.titulo = titulo;
+		this.tamanho = tamanhomaximo;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(titulo);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Documento other = (Documento) obj;
+		return Objects.equals(titulo, other.titulo);
+	}
+	
+	
+}
