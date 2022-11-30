@@ -1,0 +1,20 @@
+package sistema;
+
+import java.util.HashMap;
+
+public class Sistema {
+	private HashMap<String,Documento> documentos;
+	
+	public boolean criarDocumento(String tema, int tamanho) {
+		Documento documento = new Documento(tema,tamanho);
+		if (this.documentos.containsKey(tema)) {
+			return false;
+		}
+		else {
+			this.documentos.put(tema, documento);
+			return true;
+		}
+		
+			
+	}
+}
