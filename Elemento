@@ -1,0 +1,16 @@
+package documin;
+
+import java.util.HashMap;
+
+public class Elemento {
+	private String prioridade;
+	private String dados;
+	private HashMap<String,String> propriedades;
+	
+	
+	public Elemento(String prioridade, String dados) {
+		
+	}
+	
+	
+}
