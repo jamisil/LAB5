@@ -1,0 +1,36 @@
+package documin;
+
+import java.util.HashMap;
+import java.util.NoSuchElementException;
+
+public class DocumentoController {
+
+	private HashMap<String, Documento> documentos;
+
+	public boolean criarDocumento(String tema, int tamanho) {
+		Documento documento = new Documento(tema, tamanho);
+		if (this.documentos.containsKey(tema)) {
+			return false;
+		} else {
+			this.documentos.put(tema, documento);
+			return true;
+		}
+	}
+	public boolean criarDocumento(String tema) {
+		Documento documento = new Documento(tema);
+		if (this.documentos.containsKey(tema)) {
+			return false;
+		} else {
+			this.documentos.put(tema, documento);
+			return true;
+		}
+	}
+	public void removerDocumento(String titulo) {
+		if (!(this.documentos.containsKey(titulo))) {
+			throw new NoSuchElementException();
+		}
+		else {
+			this.documentos.remove(titulo);
+		}
+	}
+}
