@@ -5,7 +5,7 @@ import java.util.NoSuchElementException;
 
 public class DocumentoController {
 
-	private HashMap<String, Documento> documentos;
+	private HashMap<String, Documento> documentos; //string - titulo
 
 	public boolean criarDocumento(String tema, int tamanho) {
 		Documento documento = new Documento(tema, tamanho);
@@ -33,4 +33,9 @@ public class DocumentoController {
 			this.documentos.remove(titulo);
 		}
 	}
+	
+	public int contaelementos(String titulo) {
+		return this.documentos.get(titulo).getnumeroelementos;
+	}
+	
 }
